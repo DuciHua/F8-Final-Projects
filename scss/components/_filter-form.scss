@@ -1,0 +1,314 @@
+@use "../abstracts";
+
+.filter {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    border-radius: 16px;
+    padding: 30px;
+    background-color: var(--filterBackground);
+    box-shadow: 0px 40px 90px var(--filterBackground-Shadow);
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @include abstracts.screen (sm) {
+        width: 312px;
+    }
+
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 18px;
+    }
+
+    &__row {
+        display: flex;
+        align-items: start;
+
+        @include abstracts.screen (xl) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include abstracts.screen (sm) {
+            width: 100%;
+        }
+    }
+
+    &__row-button {
+        margin-left: auto;
+        column-gap: 20px;
+        align-items: center;
+
+        @include abstracts.screen (xl) {
+            flex-direction: row;
+        }
+
+        & button:first-child {
+            color: #9E9DA8;
+            font-family: Gordita;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2.2rem;
+
+            @include abstracts.screen (sm) {
+                margin-left: auto;
+            }
+        }
+
+        & button:last-child {
+            padding: 9px 10px;
+            background-color: #FFB700;
+            border-radius: 6px;
+            color: #1A162E;
+            font-family: Gordita;
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 2rem;
+        }
+    }
+
+    &__row &__col:not(:last-child) {
+        padding-right: 30px;
+        border-right: 1px solid #eee;
+
+        @include abstracts.screen (xl) {
+            border: none;
+            padding-bottom: 20px;
+            padding-right: 0;
+            border-bottom: 1px solid #eee;
+            width: 100%;
+        }
+    }
+
+    &__row &__col:not(:first-child) {
+        padding-left: 30px;
+
+        @include abstracts.screen (xl) {
+            padding-left: 0;
+            padding-top: 20px;
+            width: 100%;
+        }
+    }
+
+    &__heading, &__form-label {
+        color: var(--filterHeading);
+        font-family: Gordita;
+        font-size: 2.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 3.2rem;
+    }
+
+    & .filter__form .filter__row .filter__col:first-child .filter__form-group {
+        margin-top: 30px;
+    }
+
+    &__form-group {
+        margin-top: 20px;
+    }
+
+    &__form-slider {
+        position: relative;
+        width: 272px;
+        height: 2px;
+        flex-shrink: 0;
+        background-color: #D2D1D6;
+
+        @include abstracts.screen (sm) {
+            width: 100%;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: var(--filterBackground-Slider);
+            border: 6px solid #FFB700;
+            top: 50%;
+            left: 6%;
+            translate: 0 -50%;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: var(--filterBackground-Slider);
+            border: 6px solid #FFB700;
+            top: 50%;
+            right: 33%;
+            translate: 0 -50%;
+        }
+    }
+
+    &__form-group--inline {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        
+
+        @include abstracts.screen (sm) {
+            column-gap: 10px;
+        }
+    }
+
+    &__form-group--inline div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    & input {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #D2D1D6;
+
+        color: var(--filterHeading);
+        font-family: Gordita;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+
+        @include abstracts.screen (sm) {
+            width: 100%;
+        }
+    }
+
+    &__form-label--small {
+        display: block;
+        color: var(--filterHeading);
+        font-family: Gordita;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+    }
+    
+    &__form-select-wrap {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 6px;
+        border: 1px solid #D2D1D6;
+
+        @include abstracts.screen (sm) {
+            width: 100%;
+        }
+
+        & .filter__form-select:first-child {
+            padding-right: 14px;
+            border-right: 1px solid #D2D1D6;
+            display: flex;
+            align-items: center;
+            column-gap: 65px;
+
+            @include abstracts.screen (sm) {
+                column-gap: 45px;
+            }
+        }
+
+        & .filter__form-select:last-child {
+            padding-left: 14px;
+            display: flex;
+            align-items: center;
+            column-gap: 17px;
+
+            @include abstracts.screen (sm) {
+                column-gap: 0;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__form-select {
+        color: var(--filterHeading);
+        font-family: Gordita;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+
+        &--link {
+            display: block;
+            height: 24px;
+        }
+
+        &--icon {
+            filter: var(--filterIcon);
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__form-tag-wrap {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+
+        @include abstracts.screen (sm) {
+            column-gap: 6px;
+        }
+    }
+
+    &__form-tag {
+        padding: 6px 12px;
+        border-radius: 6px;
+        background-color: var(--filterTag-Background);
+
+        & a {
+            color: #9E9DA8;
+            font-family: Gordita;
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 2rem;
+
+            @include abstracts.screen (sm) {
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__form-search-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 16px;
+        border: 1px solid #D2D1D6;
+        border-radius: 6px;
+
+        & input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+
+            &::placeholder {
+                color: #9E9DA8;
+                font-family: Gordita;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 2.2rem;
+            }
+        }
+    }
+
+    &__form-search--icon {
+        filter: var(--filterIcon);
+    }
+}

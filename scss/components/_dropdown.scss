@@ -1,0 +1,221 @@
+@use "../abstracts";
+
+.dropdown {
+    position: absolute;
+    left: 0;
+    top: 66px;
+    padding-top: 54px;
+    width: 100%;
+    display: none;
+
+    @include abstracts.screen (lg) {
+        position: initial;
+        display: block;
+        padding-top: 0;
+    }
+
+    &__inner {
+        --innerPadding: 30px;
+
+        width: 100%;
+        padding: var(--innerPadding);
+        border-radius: 20px;
+        background: var(--dropdownBackground);
+        box-shadow: 0px 40px 90px 20px var(--dropdownBackground-Shadow);
+
+        @include abstracts.screen (lg) {
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+    }
+}
+
+.navigation-item__link {
+    @include abstracts.screen (lg) {
+        margin-bottom: 20px;
+    }
+}
+
+.top-menu {
+    --mainColumn-Width: 292px;
+    --maxInner-Height: calc(min(700px, 100vh - 144px) - var(--innerPadding) * 2);
+    position: relative;
+    
+    &__main {
+        max-height: var(--maxInner-Height);
+        width: var(--mainColumn-Width);
+        border-right: 1px solid var(--dropdownDivine);
+        overflow-y: auto;
+
+        @include abstracts.screen (lg) {
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
+    }
+}
+
+.menu-column {
+    display: flex;
+    column-gap: 14px;
+
+    &__list &__item:first-child:hover .sub-menu,
+    &__list &__item:nth-child(2):hover .sub-menu,
+    &__list &__item:nth-child(3):hover .sub-menu,
+    &__list &__item:nth-child(4):hover .sub-menu,
+    &__list &__item:nth-child(5):hover .sub-menu,
+    &__list &__item:nth-child(6):hover .sub-menu,
+    &__list &__item:nth-child(7):hover .sub-menu,
+    &__list &__item:nth-child(8):hover .sub-menu,
+    &__list &__item:nth-child(9):hover .sub-menu,
+    &__list &__item:nth-child(10):hover .sub-menu,
+    &__list &__item:nth-child(11):hover .sub-menu,
+    &__list &__item:nth-child(12):hover .sub-menu,
+    &__list &__item:nth-child(13):hover .sub-menu,
+    &__list &__item:last-child:hover .sub-menu {
+        display: grid;
+    }
+
+    @include abstracts.screen (xl) {
+        flex-direction: column;
+        row-gap: 0;
+    }
+
+    @include abstracts.screen (lg) {
+        flex-direction: row;
+    }
+
+    &__icon {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+    }
+
+    &__icon-1 {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+
+    &__icon-2 {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        object-fit: contain;
+        filter: var(--dropdownIcon);
+    }
+
+    &__icon--hide {
+         
+        @include abstracts.screen (lg) {
+            display: none;
+        }
+    }
+    
+    &__content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            flex-grow: 1;
+
+            @include abstracts.screen (lg) {
+                row-gap: 14px;
+            }
+    }
+
+    &__heading {
+        padding: 6px 0;
+    }
+
+    &__heading-link {
+        color: var(--dropdownText);
+        font-family: Gordita;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2.4rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+
+        @include abstracts.screen (lg) {
+            height: auto;
+        }
+    }
+
+    &__item {
+        @include abstracts.screen (lg) {
+            display: flex;
+            flex-direction: column;
+            row-gap: 14px;
+        }
+    }
+
+    &__item:hover > &__link {
+            color: var(--dropdownText-Hover);
+            font-family: Gordita;
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 2rem;
+    }
+
+    &__link {
+        color: var(--dropdownText);
+        font-family: Gordita;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2rem;
+    }
+}   
+
+.sub-menu {
+    position: absolute;
+    inset: 0 0 0 var(--mainColumn-Width);
+    padding: 0 var(--innerPadding);
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--innerPadding);
+    overflow-y: auto;
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        row-gap: 26px;
+    }
+
+    &--not-main {
+        position: initial;
+        inset: initial;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-height: var(--maxInner-Height);
+        padding: 0;
+    }
+
+    @include abstracts.screen (lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 0;
+        row-gap: 30px;
+    }
+}
+
+.menu-column__content {
+
+    .menu-column__heading--hide {
+        @include abstracts.screen (lg) {
+            display: none;
+        }
+    }
+}

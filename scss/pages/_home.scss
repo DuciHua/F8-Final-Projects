@@ -1,0 +1,38 @@
+@use "../abstracts";
+
+.home {
+    &__container {
+        margin-top: 40px;
+
+        @include abstracts.screen (md) {
+            margin-top: 30px;
+        }
+    }
+
+    &__heading-filter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        color: var(--homeHeading);
+        font-family: Gordita;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.4rem;
+
+        @include abstracts.screen (md) {
+            font-size: 2.2rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 3.2rem;
+        }
+    }
+
+    &__filter-wrap {
+        position: relative;
+        z-index: 1;
+    }
+}

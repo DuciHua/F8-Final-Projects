@@ -1,0 +1,23 @@
+@use "../abstracts";
+
+.home {
+    &__filter {
+        display: flex;
+        align-items: center;
+        column-gap: 14px;
+        color: var(--homeProduct-Filter-Title);
+        background-color: var(--homeProduct-Filter-Background);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-family: Gordita;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2.4rem;
+        cursor: pointer;
+    
+        &--icon {
+            filter: var(--homeProduct-Filter-Icon);
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@use "../abstracts";
+
+.row {
+    margin-top: 20px;
+}
+
+.home__cate {
+    --grid-gutter-x: 51px;
+
+    @include abstracts.screen (xl) {
+        --grid-gutter-x: 16px;
+    }
+
+    @include abstracts.screen (lg) {
+        row-gap: 16px;
+    }
+}
+
+.cate-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 26px 20px 20px;
+    background-color: var(--homeCate-Background);
+    border-radius: 16px;
+    column-gap: 18px;
+
+    @include abstracts.screen (xl) {
+        padding: 12px;
+    }
+
+    &__thumb {
+        width: 116px;
+        height: 116px;
+        background-color: var(--homeCate-Thumb);
+        border-radius: 8px;
+        object-fit: contain;
+
+        @include abstracts.screen (md) {
+            width: 86px;
+            height: 86px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6px;
+    }
+
+    &__title {
+        color: var(--homeCate-Title);
+        font-family: Gordita;
+        font-size: 2.2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.2rem;
+
+        @include abstracts.screen (md) {
+            font-size: 1.8rem;
+            line-height: 2.6rem
+        }
+    }
+
+    &__desc {
+        color: var(--homeCate-Desc);
+        font-family: Gordita;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.4rem;
+
+        @include abstracts.screen (md) {
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2rem;
+        }
+        
+    }
+}

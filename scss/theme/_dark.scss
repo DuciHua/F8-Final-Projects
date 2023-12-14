@@ -1,0 +1,95 @@
+@use "../abstracts";
+
+html.dark {
+    // ========== Header ==========
+    // Text Color
+    --textColor: #fff;
+    --iconColor: brightness(0) saturate(100%) invert(100%) sepia(9%) saturate(1647%) hue-rotate(343deg) brightness(109%) contrast(109%);
+
+    // Background
+    --headerBackground: #171C28;
+    --bodyBackground:#292E39;
+    --actionBackground: rgba(41, 46, 57, 1);
+
+    //Icon
+    --iconHeading: brightness(0) saturate(100%) invert(100%) sepia(73%) saturate(1086%) hue-rotate(189deg) brightness(108%) contrast(94%);
+
+    // Divine
+    --divineColor: #EDEDF6;
+
+    // Shadow
+    --headerElement-Shadow: rgba(0, 0, 0, 0.20);
+    --headerAvatar-Shadow: rgba(0, 0, 0, 0.08);
+
+    @include abstracts.screen (lg) {
+        --headerBackground-Responsive: #171C28;
+        --headerResponsive-Shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    // ========== Dropdown ==========
+    --dropdownBackground: #292E39;
+    --dropdownDivine: #171C28;
+    --dropdownIcon: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(188deg) brightness(106%) contrast(104%);
+
+    // Text
+    --dropdownText: #B9BABE;
+    --dropdownText-Hover: #0071DC ;
+
+    // Shadow
+    --dropdownBackground-Shadow: rgba(23, 28, 40, 0.40);
+
+    // Mobile dropdown
+    --dropdownBackground-Mobile: #292E39;
+    --dropdownBack-Mobile: brightness(0) saturate(100%) invert(89%) sepia(6%) saturate(142%) hue-rotate(191deg) brightness(86%) contrast(83%);
+
+    // ========== Home - Category ==========
+    --homeHeading: #fff;
+    --homeCate-Background: #171C28;
+    --homeCate-Thumb: #292E39;
+    --homeCate-Title: #fff;
+    --homeCate-Desc: #fff;
+
+    // ========== Home - Product ==========
+    --homeProduct-Background: #171C28;
+       
+    // Text
+    --homeProduct-Title: #fff;
+    --homeProduct-Desc: #9E9DA8;
+    --homeProduct-Price: #fff;
+    --homeProduct-Rating: #fff;
+
+     // Filter
+     --homeProduct-Filter-Title: #FFFFFF;
+     --homeProduct-Filter-Background: #171C28;
+     --homeProduct-Filter-Icon: brightness(0) saturate(100%) invert(99%) sepia(75%) saturate(274%) hue-rotate(306deg) brightness(118%) contrast(100%);
+
+    // Icon
+    --homeProduct-Icon: brightness(0) saturate(100%) invert(77%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(108%) contrast(105%);
+    --homeProduct-BackgroundIcon: #292E39;
+    --homeProduct-BackgroundIcon-Shadow: rgba(124, 124, 124, 0.10);
+    --homeProduct-Star: brightness(0) saturate(100%) invert(80%) sepia(54%) saturate(4613%) hue-rotate(3deg) brightness(106%) contrast(109%);
+
+    // Shadow
+    --homeProduct-BackgroundShadow: rgba(0, 0, 0, 0.20);
+
+    
+    // ========== Home - Filter ==========
+    --filterBackground: #292E39;
+    --filterBackground-Slider: #292E39;
+
+    // Tags
+    --filterTag-Background: #171C28;
+
+    // Text
+    --filterHeading: #fff;
+
+    // Icon
+    --filterIcon: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(165%) hue-rotate(186deg) brightness(119%) contrast(100%);
+
+    // Shadow
+    --filterBackground-Shadow: rgba(0, 0, 0, 0.40);
+
+
+    // ========== Signup ==========
+    --backgroundIntro: #171C28;
+}
